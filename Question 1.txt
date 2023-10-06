@@ -5,9 +5,9 @@
 Trigger-
 
 
-trigger ContactTrigger on Contact(after insert, after delete,    						after undelete, after update)
+trigger ContactTrigger on Contact(after insert, after delete, after undelete, after update)
 {
- if(Trigger.isAfter && (Trigger.isInsert || Trigger.isUndelete  	||Trigger.isUpdate)){
+ if(Trigger.isAfter && (Trigger.isInsert || Trigger.isUndelete ||Trigger.isUpdate)){
    ContactTriggerHandler.rollUp(trigger.new);
  }
 
@@ -33,7 +33,7 @@ if(!newContactItems.isEmpty()){
 }
 
 if(!accountIds.isEmpty(){
-  accountData = [SELECT Id,Number_of_contacts__c, (Select Id    		From Contacts)From Account WHERE Id In: accountIds];
+  accountData = [SELECT Id,Number_of_contacts__c, (Select Id From Contacts)From Account WHERE Id In: accountIds];
  }
 
  if(!accountData.isEmpty()){
