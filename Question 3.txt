@@ -1,10 +1,6 @@
 3.Make a basic http callout and print the result using system.debug (https://postman-echo.com/get?foo1=bar1&foo2=bar2)
 
 
-
-
-Callout Program using future method:-
-
 public class FutureCallout {
 
     @future(callout=true)
@@ -13,7 +9,7 @@ public class FutureCallout {
         Http h = new Http();
         
         HttpRequest req = new HttpRequest();
-        req.setEndpoint('https://postman-echo.com/get?foo1=bar1   					&foo2=bar2');
+        req.setEndpoint('https://postman-echo.com/get?foo1=bar1&foo2=bar2');
         req.setMethod('GET');
         
         HttpResponse res = h.send(req);
