@@ -1,14 +1,9 @@
 2.Build a basic lightning component that can query a list of 10 most recently created accounts and display it using a lightning app.
 
 
-
-
-
 accCtrl.apxc File -
 
-
 public class accCtrl {
-
 @AuraEnabled
       public static List<Account> accListData() {
         List<Account> accList = [Select Id from Account Order by CreatedDate DESC LIMIT 10];
